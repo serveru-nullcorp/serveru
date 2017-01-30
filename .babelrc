@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    "syntax-async-functions"
+  ],
+  "presets": [
+    [
+      "latest",
+      {
+        "es2015": {
+          "modules": false
+        }
+      }
+    ]
+  ]
+}
