@@ -46,12 +46,25 @@ body {
     text-transform: capitalize;
 }
 
+.centered {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
 .cursive {
     font-family: $font-cursive;
 }
 
 .field-label {
     color: steelblue;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .larger {
@@ -64,6 +77,10 @@ body {
 
 .monospace {
     font-family: $font-monospace;
+}
+
+.mw20 {
+    min-width: 20rem;
 }
 
 .resource-description {

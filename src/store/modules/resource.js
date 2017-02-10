@@ -3,7 +3,7 @@ import { randomString } from '../../helpers/random.helper'
 
 export const state = {
   description: 'eat this and live',
-  fields: [{ name: 'ID', readonly: true, type: 'ObjectID' }],
+  fields: [{ metadata: { field: true }, name: 'ID', readonly: true, type: 'ObjectID' }],
   id: randomString(),
   name: 'food',
   types: [
@@ -35,7 +35,7 @@ export const actions = {
 
 export const mutations = {
   [types.ADD_FIELD](state) {
-    state.fields.push({ name: '', type: 'String' })
+    state.fields.push({ metadata: { field: true }, name: '', type: 'String' })
   },
 
   [types.CHANGE_ID](state) {
@@ -47,11 +47,15 @@ export const mutations = {
   },
 
   [types.DELETE_FIELD](state, { index }) {
-    state.fields.splice(index)
+    state.fields.splice(index, 1)
   },
 
   [types.CHANGE_DESCRIPTION](state, { description }) {
     state.description = description
+  },
+
+  [types.TOGGLE_FIELD_META_TYPE](state, {index}) {
+    state.fields[index].metadata.field = !state.fields[index].metadata.field
   },
 
   [types.UPDATE_FIELD](state, { index, field }) {
