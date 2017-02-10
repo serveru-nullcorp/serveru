@@ -38,6 +38,12 @@ textarea.el-textarea__inner,
     color: cadetblue;
 }
 
+.add-resource-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
 body {
     color: slategray;
 }
@@ -60,11 +66,6 @@ body {
 
 .field-label {
     color: steelblue;
-}
-
-.flex-container {
-    display: flex;
-    flex-flow: row wrap;
 }
 
 .larger {
@@ -97,6 +98,19 @@ body {
     font-size: 5rem;
     line-height: 10%;
     vertical-align: baseline;
+}
+
+.striped-table {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    min-width: 50rem;
+    .row {
+        border-top: 1px solid lightgray;
+        line-height: 2em;
+        &:first-child {
+            border: none;
+        }
+    }
 }
 
 .toggle-block {
