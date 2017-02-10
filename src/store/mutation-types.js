@@ -1,3 +1,6 @@
+export const ADD_FIELD = '[resource] add field'
 export const CHANGE_DESCRIPTION = '[resource] change description'
 export const CHANGE_ID = '[resource] change id'
 export const CHANGE_NAME = '[resource] change name'
+export const DELETE_FIELD = '[resource] delete field'
+export const UPDATE_FIELD = '[resource] change field'

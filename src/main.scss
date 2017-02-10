@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+$font-cursive: 'Indie Flower',
+cursive;
+$font-monospace: Courier New,
+Courier,
+monospace;
+@mixin generate-spacing-classes($types,
+$directions,
+$space-amounts) {
+    @each $type in $types {
+        @each $direction in $directions {
+            @each $space in $space-amounts {
+                .#{nth($type, 2)}#{nth($direction, 2)}#{$space} {
+                    #{nth($type, 1)}-#{nth($direction, 1)}: #{$space}em;
+                }
+                .#{nth($type, 2)}x#{$space} {
+                    @extend .#{nth($type, 2)}l#{$space};
+                    @extend .#{nth($type, 2)}r#{$space};
+                }
+                .#{nth($type, 2)}y#{$space} {
+                    @extend .#{nth($type, 2)}b#{$space};
+                    @extend .#{nth($type, 2)}t#{$space};
+                }
+                .#{nth($type, 2)}#{$space} {
+                    #{nth($type, 1)}: #{$space}em;
+                }
+            }
+        }
+    }
+}
+
+@include generate-spacing-classes((margin m, padding p),
+(bottom b, left l, right r, top t),
+(0, 1, 2, 3, 4, 5));
+input.el-input__inner,
+textarea.el-textarea__inner,
+.field-span {
+    color: cadetblue;
+}
+
+body {
+    color: slategray;
+}
+
+.capitalized {
+    text-transform: capitalize;
+}
+
+.cursive {
+    font-family: $font-cursive;
+}
+
+.field-label {
+    color: steelblue;
+}
+
+.larger {
+    font-size: larger;
+}
+
+.link-like {
+    cursor: pointer;
+}
+
+.monospace {
+    font-family: $font-monospace;
+}
+
+.resource-description {
+    color: chocolate;
+    text-transform: capitalize;
+}
+
+.resource-id {
+    color: teal;
+}
+
+.resource-title {
+    color: tomato;
+    font-size: 5rem;
+    line-height: 10%;
+    vertical-align: baseline;
+}
+
+.toggle-block {
+    background: deepskyblue;
+    color: aqua;
+    cursor: pointer;
+    height: 100%;
+}
